@@ -17,10 +17,13 @@ def check_palindrome(word: str) -> bool:
     iterations = int(len(collection) / 2) + 1
     # If number of characters less than 2 its not palindrome
     if len(collection) < 2:
+        print('Its not palindrome, characters len less than 2')
         return False
     # Cycle in range of limited calculations. Its possible also using while here, but i don`t like unlimited cycles
     for _ in range(iterations):
         if len(collection) >= 2 and collection.pop() != collection.popleft():
+            print(f'Word {word} is not palindrome')
             return False
     else:
+        print(f'Word {word} is palindrome')
         return True

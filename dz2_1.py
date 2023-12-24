@@ -4,6 +4,7 @@ from typing import Any
 import random
 import time
 
+QUEUE_LIMIT = 30
 ID = 0
 queue = Queue()
 
@@ -33,6 +34,6 @@ def process_request():
 
 
 if __name__ == "__main__":
-    while True:
+    for _ in range(QUEUE_LIMIT):
         random.choice([generate_request, process_request])()
         time.sleep(0.3)
